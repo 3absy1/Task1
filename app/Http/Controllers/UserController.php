@@ -35,7 +35,7 @@ class UserController extends Controller
             'name'=>$request->input('name'),
             'address'=>$request->input('address'),
             'email'=>$request->input('email'),
-            'password'=>$request->input('password')
+            'password'=>bcrypt($request->input('password'))
 
         ]);
         return redirect('Users')->with('status','Created Successfully');

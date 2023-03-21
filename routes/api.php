@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\SignInController;
+use App\Http\Controllers\SignUpController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/storageUserRequest', function (Request $request) {
-    return $request->user();
-});
+//Route::middleware('auth:sanctum')->get('/storageUserRequest', function (Request $request) {
+//    return $request->user();
+//});
+Route::apiResource('signin', LoginController::class);
+Route::apiResource('register', SignUpController::class);

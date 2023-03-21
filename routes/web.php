@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\SignInController;
+use App\Http\Controllers\SignUpController;
 use App\Http\Controllers\UserController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -34,4 +36,16 @@ Route::get('{usersID}/delete2', [UserController::class,'destroy']);
 //--------create--------
 Route::get('create2',[UserController::class ,'index']);
 Route::get('add2', [UserController::class,'create']);
+
+//***************************************   Sign in    ************************************************************
+
+Route::post('Login',[SignInController::class,'store']);
+Route::get('Login',[SignInController::class,'show']);
+
+
+//***************************************   Sign Up    ************************************************************
+
+Route::post('SignUp',[SignUpController::class,'create']);
+Route::get('SignUp',[SignUpController::class,'show']);
+
 
